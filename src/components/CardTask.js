@@ -3,6 +3,7 @@ import Button from './tags/Button';
 import Field from './tags/Field';
 import Form from './tags/Form';
 import Input from './tags/Input';
+import Textarea from './tags/Textarea';
 import Trash from './icons/Trash';
 import styles from './CardTask.module.scss';
 
@@ -37,7 +38,7 @@ const CardTask = ({ name, description, finished, id }) => {
         onChange = { updateTask } 
       />
 
-      <Input 
+      <Textarea
         type="text" 
         name="description" 
         placeholder="Agregar descripcion" 
@@ -63,6 +64,7 @@ const CardTask = ({ name, description, finished, id }) => {
       >
         <Trash fill="#FFFFFF" width="20px"/>
       </Button>
+      
     </Form>
   );
 

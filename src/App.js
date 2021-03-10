@@ -50,7 +50,7 @@ function App() {
       <Form method="POST" className="form" onSubmit={(e) => {
         e.preventDefault();
         addTasks( e.target.name.value, e.target.description.value );
-        console.log(e.target.name.value, e.target.description.value)
+        e.target.name.value = e.target.description.value = "";
       }}>
         <Input type="text" label="Agregar nombre" name="name" placeholder="Agregar nombre" className="input" />
         <Input type="text" label="Agregar descripcion" name="description" placeholder="Agregar descripcion" className="input" />

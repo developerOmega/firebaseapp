@@ -10,7 +10,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr) 3rem;
   align-items: center;
-  // justify-content: space-between;
 }
 
 .input {
@@ -18,6 +17,9 @@
   background: transparent;
   font-size: .9rem;
   text-align: center;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  resize: none;
 }
 
 .checkbox {
@@ -66,5 +68,11 @@
     svg {
       fill: rgba($danger, .8);
     }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
   }
 }
