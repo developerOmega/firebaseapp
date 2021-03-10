@@ -1,7 +1,6 @@
 import Input from './Input';
-import styles from './Field.module.scss';
 
-const Field = ({placeholder="", name="", label="", forName=name, type="", value="", onChange = () => {return}}) => {
+const Field = ({className = "",placeholder="", name="", label="", forName=name, type="", value="", onChange = () => {return}}) => {
 
   return (
     <label> 
@@ -15,7 +14,7 @@ const Field = ({placeholder="", name="", label="", forName=name, type="", value=
         name={name} 
         id={forName} 
         value={value}
-        className={styles.input}
+        className={className}
         onChange = {onChange}
       />
     </label>

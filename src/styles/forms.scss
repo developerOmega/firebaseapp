@@ -1,5 +1,33 @@
 .form {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.btn {
+  grid-column: span 2;
+
+  border: none;
+  background: $primary;
+  border-radius: .3rem;
+  font-size: 1rem;
+  color: $white;
+  padding: .5rem;
+  cursor: pointer;
+
+  box-shadow: 1px 2px 5px rgba($primary, .5);
+
+  &:hover {
+    background: rgba($primary, .8);
+  }
+}
+
+.input {
+  align-self: center;
+  padding: .5rem;
+  width: 100%;
+  border: none;
+  border-radius: .2rem;
+  margin-top: 1rem;
 }

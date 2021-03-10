@@ -3,12 +3,11 @@ import Button from './tags/Button';
 import Field from './tags/Field';
 import Form from './tags/Form';
 import Input from './tags/Input';
+import Trash from './icons/Trash';
+import styles from './CardTask.module.scss';
+
 
 const CardTask = ({ name, description, finished, id }) => {
-
-  const style = {
-    display: "flex"
-  };
 
   const updateTask  = (self) => {
     const task = {
@@ -28,11 +27,12 @@ const CardTask = ({ name, description, finished, id }) => {
   }
 
   return (
-    <Form method="POST" style={style} onClick={ (e) => e.preventDefault() }>
+    <Form method="POST" className={styles.card} onClick={ (e) => e.preventDefault() }>
       <Input 
         type="text" 
         name="name" 
-        placeholder="Agregar nombre" 
+        placeholder="Agregar nombre"
+        className={styles.input}
         value={name}
         onChange = { updateTask } 
       />
@@ -41,6 +41,7 @@ const CardTask = ({ name, description, finished, id }) => {
         type="text" 
         name="description" 
         placeholder="Agregar descripcion" 
+        className={styles.input}
         value={description}
         onChange = { updateTask } 
       />
@@ -50,12 +51,17 @@ const CardTask = ({ name, description, finished, id }) => {
         name="finished" 
         label="is finished?"
         value={finished ? "true" : "false"}
+        className={styles.checkbox}
         onChange = { updateTask }
       />
 
 
-      <Button type="button" onClick={ deleteTask }>
-        Eliminar
+      <Button 
+        type="button" 
+        className={styles.btn} 
+        onClick={ deleteTask }
+      >
+        <Trash fill="#FFFFFF" width="20px"/>
       </Button>
     </Form>
   );

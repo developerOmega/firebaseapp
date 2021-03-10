@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 
 import CardTask from './components/CardTask';
 import Form from './components/tags/Form';
-import Field from './components/tags/Field';
 import Button from './components/tags/Button';
+import Input from './components/tags/Input';
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -52,9 +52,9 @@ function App() {
         addTasks( e.target.name.value, e.target.description.value );
         console.log(e.target.name.value, e.target.description.value)
       }}>
-        <Field type="text" label="Agregar nombre" name="name" placeholder="Agregar nombre" />
-        <Field type="text" label="Agregar descripcion" name="description" placeholder="Agregar descripcion" />
-        <Button type="submit" className="" > Agregar </Button>
+        <Input type="text" label="Agregar nombre" name="name" placeholder="Agregar nombre" className="input" />
+        <Input type="text" label="Agregar descripcion" name="description" placeholder="Agregar descripcion" className="input" />
+        <Button type="submit" className="btn" > Agregar </Button>
       </Form>
 
       <Tasks />

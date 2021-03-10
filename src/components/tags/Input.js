@@ -9,6 +9,7 @@ const Input = ({type = "text", className = "", placeholder="", name="", id="", v
       defaultValue={value}
       className={className}
       onChange={onChange}
+      autoComplete="off"
     />
 
 
