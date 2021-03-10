@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.scss';
 import { database } from './config/firebase';
 import { useState, useEffect } from 'react';
 
@@ -6,7 +6,6 @@ import CardTask from './components/CardTask';
 import Form from './components/tags/Form';
 import Field from './components/tags/Field';
 import Button from './components/tags/Button';
-
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -47,15 +46,15 @@ function App() {
   }
 
   return (
-    <div>
-      <Form method="POST" onSubmit={(e) => {
+    <div className="content">
+      <Form method="POST" className="form" onSubmit={(e) => {
         e.preventDefault();
         addTasks( e.target.name.value, e.target.description.value );
         console.log(e.target.name.value, e.target.description.value)
       }}>
         <Field type="text" label="Agregar nombre" name="name" placeholder="Agregar nombre" />
         <Field type="text" label="Agregar descripcion" name="description" placeholder="Agregar descripcion" />
-        <Button type="submit" > Agregar </Button>
+        <Button type="submit" className="" > Agregar </Button>
       </Form>
 
       <Tasks />

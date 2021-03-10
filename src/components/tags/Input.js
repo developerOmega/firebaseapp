@@ -1,4 +1,4 @@
-const Input = ({type = "text", placeholder="", name="", id="", value="", onChange = () => {return}}) => {
+const Input = ({type = "text", className = "", placeholder="", name="", id="", value="", onChange = () => {return}}) => {
   return type !== "checkbox" ? (
     
     <input 
@@ -7,6 +7,7 @@ const Input = ({type = "text", placeholder="", name="", id="", value="", onChang
       name={name} 
       id={id} 
       defaultValue={value}
+      className={className}
       onChange={onChange}
     />
 
@@ -16,8 +17,9 @@ const Input = ({type = "text", placeholder="", name="", id="", value="", onChang
       type={type} 
       name={name} 
       id={id} 
+      className={className}
       defaultValue={value}
-      defaultChecked={ value == 'true' ? "checked" : "" }  
+      defaultChecked={ value === 'true' ? "checked" : "" }  
       onChange={onChange}
     />
   );

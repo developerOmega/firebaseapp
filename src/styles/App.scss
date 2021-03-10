@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: linear-gradient(270deg, rgb(245, 76, 76),  rgb(245, 240, 76));
+  background-size: 400% 400%;
+  animation: AnimationName 15s ease infinite;
+  height: 100vh;
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent; 
+  
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  
+  .content {
+    background: #F3F3F3;
+    padding: 2rem;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, .5);
+  }
+}
+
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@import './forms.scss';

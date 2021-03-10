@@ -14,7 +14,7 @@ const CardTask = ({ name, description, finished, id }) => {
     const task = {
       name: self.target.name === 'name' ? self.target.value : name,
       description: self.target.name === "description" ? self.target.value : description,
-      finished: self.target.name !== "finished" ?  finished : finished == false ? true : false
+      finished: self.target.name !== "finished" ?  finished : finished === false ? true : false
     }
 
     let updates = {};
