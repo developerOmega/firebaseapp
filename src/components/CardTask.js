@@ -49,7 +49,7 @@ const CardTask = ({ name, description, finished, id }) => {
       <Field
         type="checkbox" 
         name="finished" 
-        label="is finished?"
+        label="Finished"
         value={finished ? "true" : "false"}
         className={styles.checkbox}
         onChange = { updateTask }

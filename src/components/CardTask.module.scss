@@ -9,6 +9,8 @@
 
   display: grid;
   grid-template-columns: repeat(3, 1fr) 3rem;
+  align-items: center;
+  // justify-content: space-between;
 }
 
 .input {
@@ -16,6 +18,38 @@
   background: transparent;
   font-size: .9rem;
   text-align: center;
+}
+
+.checkbox {
+  div {
+    text-align: center;
+    display: block;
+    border-radius: .3rem;
+    margin: 1rem;
+    padding: .3rem 0;
+    transition: ease .5s all;
+    background: rgba($white, .7);
+    cursor: pointer;
+    &:hover {
+      background: $white;
+    }
+  
+  }
+  input {
+    display: none;
+    &:checked + div{
+      transition: ease .5s all;
+      background: $success ;
+      color: $white;
+      &:after {
+        transition: ease .5s all;
+      }
+      &:before {
+        transition: ease .5s all;
+      }
+    }
+  }
+  
 }
 
 .btn {
