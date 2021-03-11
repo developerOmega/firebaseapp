@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { database } from '../config/firebase';
 import Button from './tags/Button';
 import Field from './tags/Field';
@@ -9,6 +10,10 @@ import styles from './CardTask.module.scss';
 
 
 const CardTask = ({ name, description, finished, id }) => {
+
+  const [drop, setDrop] = useState(false);
+
+  const styleCard = !drop ? styles.card : `${styles.card} ${styles.animation}`;
 
   const updateTask  = (self) => {
     const task = {
@@ -23,12 +28,16 @@ const CardTask = ({ name, description, finished, id }) => {
     return database.ref().update(updates);
   }
 
-  const deleteTask = async () => {
-    return await database.ref(`/tasks/${id}`).remove();
+  const deleteTask = () => {
+    setDrop(true);
+    setTimeout( async () => {
+      return await database.ref(`/tasks/${id}`).remove();
+    }, 1000 );
   }
 
+
   return (
-    <Form method="POST" className={styles.card} onClick={ (e) => e.preventDefault() }>
+    <Form method="POST" className={styleCard} onClick={ (e) => e.preventDefault() }>
       <Input 
         type="text" 
         name="name" 

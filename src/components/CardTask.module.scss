@@ -12,6 +12,11 @@
   align-items: center;
 }
 
+.animation {
+  position: relative;
+  animation: difuminate 1s;
+}
+
 .input {
   border: none;
   background: transparent;
@@ -68,6 +73,17 @@
     svg {
       fill: rgba($danger, .8);
     }
+  }
+}
+
+@keyframes difuminate {
+  0% {
+    opacity: 100%;
+    left: 0;
+  }
+  100%{
+    opacity: 0%;
+    left: 200px;
   }
 }
 
